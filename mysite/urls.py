@@ -1,6 +1,5 @@
 from django.conf.urls import patterns, include, url
-from cd_library.urls import urlpatterns as cd_library_urls
-import cd_library
+#from cd_library.urls import urlpatterns as cd_library_urls
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -16,5 +15,6 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     # cd_library app urls
-    url(r'^', include(cd_library.urls)),
+    url(r'^', include('cd_library.urls')),
+    url(r'^pastebin/', include('pastebin.urls')),
 )
