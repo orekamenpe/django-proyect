@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if cds %}
+    <p>Found {{ cds|length }} cd{{ cds|pluralize }}.</p>
+    <ul>
+        {% for cd in cds %}
+        <li>{{ cd.title }}, by {{ cd.artist }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+<p>No cds matched your search citeria.</p>
+{% endif %}
+</body>
+</html>
